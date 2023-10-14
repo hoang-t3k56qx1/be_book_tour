@@ -13,6 +13,8 @@ public class DiaDanh {
     private Long id;
 
     private String ten;
+
+    @Column(length = 1000000)
     private String moTa;
 
 }

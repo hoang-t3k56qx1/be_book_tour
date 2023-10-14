@@ -15,6 +15,7 @@ public class Tour {
 
     private String ten;
 
+    @Column(length = 1000000)
     private String moTa;
 
 
