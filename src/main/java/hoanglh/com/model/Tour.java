@@ -14,11 +14,21 @@ public class Tour {
     private Long id;
 
     private String ten;
+
+    private String moTa;
+
+
     private float gia;
+
     private String thoiGian;
+
+    @ManyToOne
+    @JoinColumn(name = "dia_danh_id")
     private DiaDanh diaDanh;
+
     private String lichTrinh;
-    private List<String> img;
+
+    private String  imgs;
 
 }
 
