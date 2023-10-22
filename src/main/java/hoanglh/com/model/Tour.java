@@ -15,7 +15,7 @@ public class Tour {
 
     private String ten;
 
-    @Column(length = 1000000)
+    @Column(columnDefinition = "TEXT")
     private String moTa;
 
 
@@ -29,6 +29,7 @@ public class Tour {
 
     private String lichTrinh;
 
+    @Column(columnDefinition = "TEXT")
     private String  imgs;
 
 }

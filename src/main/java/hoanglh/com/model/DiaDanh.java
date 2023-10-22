@@ -14,7 +14,7 @@ public class DiaDanh {
 
     private String ten;
 
-    @Column(length = 1000000)
+    @Column(columnDefinition = "TEXT")
     private String moTa;
 
 }
