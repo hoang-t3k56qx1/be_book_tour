@@ -29,6 +29,10 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public User login(String username, String password) {
+        return userRepository.login(username, password);
+    }
+
     public User updateUser(User user) {
         return userRepository.save(user);
     }
