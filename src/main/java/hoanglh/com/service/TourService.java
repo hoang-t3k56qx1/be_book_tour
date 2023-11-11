@@ -20,6 +20,9 @@ public class TourService {
     public List<Tour> getAllTour() {
         return tourRepository.findAll();
     }
+    public List<Tour> findByTenIgnoreCaseContaining(String key) {
+        return tourRepository.findByTenIgnoreCaseContaining(key);
+    }
 
     public Tour getTourById(Long id) {
         return tourRepository.findById(id).orElse(null);

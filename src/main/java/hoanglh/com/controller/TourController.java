@@ -22,6 +22,16 @@ public class TourController {
         return tourService.getAllTour();
     }
 
+    @GetMapping("/name")
+    public List<Tour> getTourByName(@RequestParam(required = false) String key) {
+        if (key == null || key.trim().isEmpty()) {
+            // Nếu key không tồn tại hoặc rỗng, trả về tất cả các tour
+            return tourService.getAllTour();
+        }
+
+        return tourService.findByTenIgnoreCaseContaining(key);
+    }
+
     @GetMapping("/{id}")
     public Tour getTourById(@PathVariable Long id) {
         return tourService.getTourById(id);
