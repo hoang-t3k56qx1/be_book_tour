@@ -17,19 +17,19 @@ public class HoaDonService {
         this.hoaDonRepository = hoaDonRepository;
     }
 
-    public List<HoaDon> getAllHoaDon() {
+    public List<DonDat> getAllHoaDon() {
         return hoaDonRepository.findAll();
     }
 
-    public HoaDon getHoaDonById(Long id) {
+    public DonDat getHoaDonById(Long id) {
         return hoaDonRepository.findById(id).orElse(null);
     }
 
-    public HoaDon createHoaDon(HoaDon hoaDon) {
+    public DonDat createHoaDon(DonDat hoaDon) {
         return hoaDonRepository.save(hoaDon);
     }
 
-    public HoaDon updateHoaDon(HoaDon hoaDon) {
+    public DonDat updateHoaDon(DonDat hoaDon) {
         return hoaDonRepository.save(hoaDon);
     }
 

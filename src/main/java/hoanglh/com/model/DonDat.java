@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class HoaDon {
+public class DonDat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,7 +17,7 @@ public class HoaDon {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "dia_danh_id")
+    @JoinColumn(name = "tour_id")
     private Tour tour;
 
     private int soLuong;
@@ -28,5 +28,6 @@ public class HoaDon {
 
     private String ngayKetThuc;
 
+    private Long tongTien;
 
 }

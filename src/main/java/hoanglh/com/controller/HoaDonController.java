@@ -18,22 +18,22 @@ public class HoaDonController {
     }
 
     @GetMapping
-    public List<HoaDon> getAllHoaDon() {
+    public List<DonDat> getAllHoaDon() {
         return hoaDonService.getAllHoaDon();
     }
 
     @GetMapping("/{id}")
-    public HoaDon getHoaDonById(@PathVariable Long id) {
+    public DonDat getHoaDonById(@PathVariable Long id) {
         return hoaDonService.getHoaDonById(id);
     }
 
     @PostMapping
-    public HoaDon createHoaDon(@RequestBody HoaDon hoaDon) {
+    public DonDat createHoaDon(@RequestBody DonDat hoaDon) {
         return hoaDonService.createHoaDon(hoaDon);
     }
 
     @PutMapping("/{id}")
-    public HoaDon updateHoaDon( @RequestBody HoaDon hoaDon) {
+    public DonDat updateHoaDon( @RequestBody DonDat hoaDon) {
         return hoaDonService.updateHoaDon(hoaDon);
     }
 
