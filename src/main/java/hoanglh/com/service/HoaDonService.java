@@ -21,8 +21,8 @@ public class HoaDonService {
         return hoaDonRepository.findAll();
     }
 
-    public DonDat getHoaDonById(Long id) {
-        return hoaDonRepository.findById(id).orElse(null);
+    public List<DonDat> getHoaDonById(Long id) {
+        return hoaDonRepository.findByUserId(id);
     }
 
     public DonDat createHoaDon(DonDat hoaDon) {

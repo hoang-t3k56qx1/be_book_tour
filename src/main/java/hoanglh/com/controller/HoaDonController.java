@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/hoadons")
+@RequestMapping("/api/dondats")
 public class HoaDonController {
 
     private final HoaDonService hoaDonService;
@@ -23,7 +23,7 @@ public class HoaDonController {
     }
 
     @GetMapping("/{id}")
-    public DonDat getHoaDonById(@PathVariable Long id) {
+    public List<DonDat> getHoaDonById(@PathVariable Long id) {
         return hoaDonService.getHoaDonById(id);
     }
 

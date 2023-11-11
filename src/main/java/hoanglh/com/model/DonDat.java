@@ -28,6 +28,6 @@ public class DonDat {
 
     private String ngayKetThuc;
 
-    private Long tongTien;
+    private Double tongTien;
 
 }
