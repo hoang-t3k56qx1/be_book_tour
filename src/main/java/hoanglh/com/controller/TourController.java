@@ -3,6 +3,8 @@ package hoanglh.com.controller;
 import hoanglh.com.model.*;
 import hoanglh.com.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -42,13 +44,19 @@ public class TourController {
         return tourService.createTour(tour);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public Tour updateTour( @RequestBody Tour tour) {
         return tourService.updateTour(tour);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteTour(@PathVariable Long uid) {
-        tourService.deleteTour(uid);
+    @DeleteMapping("/{uid}")
+    public ResponseEntity<String> deleteTour(@PathVariable Long uid) {
+        boolean deleted = tourService.deleteTour(uid);
+
+        if (deleted) {
+            return new ResponseEntity<>("Xóa thành công", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Lỗi: Tour không tồn tại hoặc không thể xóa", HttpStatus.OK);
+        }
     }
 }

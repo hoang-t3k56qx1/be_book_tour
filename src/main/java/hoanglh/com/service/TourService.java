@@ -36,7 +36,12 @@ public class TourService {
         return tourRepository.save(tour);
     }
 
-    public void deleteTour(Long id) {
-        tourRepository.deleteById(id);
+    public boolean deleteTour(Long id) {
+        try {
+            tourRepository.deleteById(id);
+            return true; // Xóa thành công
+        } catch (Exception e) {
+            return false; // Xóa thất bại
+        }
     }
 }
